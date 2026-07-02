@@ -1,0 +1,96 @@
+	---
+import '../styles/global.css';
+import Navbar from '../components/ui/Navbar.astro';
+import Footer from '../components/ui/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = 'SexoloGabi - Inteligencia Sexual Consciente',
+	description = 'Educación sexual, cuerpo y placer desde la ciencia, la presencia y el ritual. No es entretenimiento, es entrenamiento íntimo.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italianno&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&family=Titillium+Web:wght@300;400;600;700&display=swap" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<style>
+			/* Elementos con animaciones Motion empiezan ocultos para transición suave */
+			[data-animate] {
+				opacity: 0;
+				will-change: transform, opacity;
+			}
+			
+			/* Optimización de performance para animaciones */
+			* {
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			/* Scroll suave nativo - funciona con todos los métodos de scroll */
+			html {
+				scroll-behavior: smooth;
+			}
+			
+			/* Personalizar scrollbar para mejor estética */
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+			
+			::-webkit-scrollbar-track {
+				background: #FFF2F0;
+			}
+			
+			::-webkit-scrollbar-thumb {
+				background: #D6664C;
+				border-radius: 5px;
+			}
+			
+			::-webkit-scrollbar-thumb:hover {
+				background: #C04A2F;
+			}
+
+		</style>
+	</head>
+	<body class="bg-main text-dark">
+		<Navbar />
+		<main class="pt-20">
+			<slot />
+		</main>
+		<Footer />
+		
+		<script>
+			import { initAllMotions } from '../utils/motionInit';
+
+			function initPageMotion() {
+				if (!document.querySelector('[data-animate]')) {
+					return;
+				}
+
+				requestAnimationFrame(() => {
+					initAllMotions();
+				});
+			}
+
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', initPageMotion, { once: true });
+			} else {
+				initPageMotion();
+			}
+
+			document.addEventListener('astro:page-load', initPageMotion);
+		</script>
+	</body>
+</html>

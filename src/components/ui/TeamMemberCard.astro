@@ -1,0 +1,103 @@
+---
+export interface Props {
+	name: string;
+	role: string;
+	description: string;
+	image: string;
+	tags: string[];
+	badge?: string;
+	featured?: boolean;
+	layout?: 'vertical' | 'horizontal';
+	imagePosition?: string;
+}
+
+const { name, role, description, image, tags, badge, featured = false, layout = 'vertical', imagePosition = 'center 35%' } = Astro.props;
+---
+
+{layout === 'vertical' ? (
+	<!-- Layout Vertical: Foto arriba, contenido abajo -->
+	<div class={`relative bg-white rounded-4xl overflow-hidden border border-secondary md:hover:border-coral-300 transition-all duration-300 group ${featured ? 'shadow-2xl shadow-coral-100' : 'shadow-lg md:hover:shadow-xl'}`}>
+		<!-- Imagen -->
+		<div class="relative aspect-3/4 overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
+			<img 
+				src={image} 
+				alt={name}
+				class="w-full h-full object-cover md:grayscale md:group-hover:grayscale-0 transition-all duration-500 md:group-hover:scale-105"
+				style={`object-position: ${imagePosition};`}
+			/>
+			<!-- Badge superior izquierdo -->
+			{badge && (
+				<div class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full border border-coral-200">
+					<span class="text-[10px] font-bold tracking-wider text-coral-600">{badge}</span>
+				</div>
+			)}
+			<!-- Gradient overlay para ocultar marca de agua -->
+			<div class="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white via-white/80 to-transparent pointer-events-none"></div>
+		</div>
+
+		<!-- Contenido -->
+		<div class="p-4 md:p-5">
+			<h3 class="font-serif text-xl md:text-2xl text-dark mb-1.5 leading-tight">
+				{name}
+			</h3>
+			<p class="font-semibold tracking-wide mb-2.5 text-xs md:text-sm text-coral-600">
+				{role}
+			</p>
+			<p class="text-accent/80 text-xs md:text-sm leading-relaxed mb-3">
+				{description}
+			</p>
+
+			<!-- Tags -->
+			{tags && tags.length > 0 && (
+				<div class="flex flex-wrap gap-1.5">
+					{tags.map((tag) => (
+						<span class="px-2.5 py-0.5 text-[10px] font-medium text-coral-400 bg-coral-50 rounded-full border border-coral-200 hover:border-coral-300 hover:text-coral-600 transition-colors">
+							{tag}
+						</span>
+					))}
+				</div>
+			)}
+		</div>
+	</div>
+) : (
+	<!-- Layout Horizontal: Foto a la izquierda, contenido a la derecha -->
+	<div class="relative bg-white rounded-4xl overflow-hidden border border-secondary md:hover:border-coral-300 transition-all duration-300 group shadow-lg md:hover:shadow-xl">
+		<div class="flex flex-col md:flex-row md:h-full">
+			<!-- Imagen -->
+			<div class="relative md:w-2/5 aspect-4/3 md:aspect-auto md:min-h-full overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
+				<img 
+					src={image} 
+					alt={name}
+					class="w-full h-full object-cover md:grayscale md:group-hover:grayscale-0 transition-all duration-500 md:group-hover:scale-105"
+					style={`object-position: ${imagePosition};`}
+				/>
+				<!-- Gradient overlay para ocultar marca de agua -->
+				<div class="absolute bottom-0 left-0 right-0 h-20 bg-linear-to-t from-white via-white/80 to-transparent pointer-events-none"></div>
+			</div>
+
+			<!-- Contenido -->
+			<div class="md:w-3/5 p-4 md:p-5 flex flex-col justify-center">
+				<h3 class="font-serif text-lg md:text-xl text-dark mb-1.5 leading-tight">
+					{name}
+				</h3>
+				<p class="font-semibold tracking-wide mb-2.5 text-xs text-coral-600 uppercase">
+					{role}
+				</p>
+				<p class="text-accent/80 text-xs md:text-sm leading-relaxed mb-3">
+					{description}
+				</p>
+
+				<!-- Tags -->
+				{tags && tags.length > 0 && (
+					<div class="flex flex-wrap gap-1.5">
+						{tags.map((tag) => (
+							<span class="px-2.5 py-0.5 text-[10px] font-medium text-coral-400 bg-coral-50 rounded-full border border-coral-200 hover:border-coral-300 hover:text-coral-600 transition-colors">
+								{tag}
+							</span>
+						))}
+					</div>
+				)}
+			</div>
+		</div>
+	</div>
+)}

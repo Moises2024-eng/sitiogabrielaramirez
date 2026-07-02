@@ -1,0 +1,439 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/sections/Hero.astro';
+import AboutMission from '../components/sections/AboutMission.astro';
+import BlogSection from '../components/sections/BlogSection.astro';
+import TeamSection from '../components/sections/TeamSection.astro';
+import Button from '../components/ui/Button.astro';
+import studioImage from '../assets/images/kaylee-garrett-GaprWyIw66o-unsplash.jpg';
+import masteryImage from '../assets/images/jared-rice-NTyBbu66_SI-unsplash.jpg';
+---
+
+<Layout title="SexoloGabi - Inteligencia Sexual Consciente">
+	
+	<!-- Background decorativo global -->
+	<div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+		<div class="absolute top-0 right-0 w-100 h-100 bg-coral-50 rounded-full blur-3xl md:blur-[120px] translate-x-1/3 -translate-y-1/3"></div>
+		<div class="absolute bottom-1/4 left-0 w-125 h-125 bg-secondary rounded-full blur-3xl md:blur-[140px] -translate-x-1/2"></div>
+	</div>
+
+	<div class="relative z-10">
+		<Hero />
+		<AboutMission />
+
+		<!-- Separador decorativo -->
+		<div class="flex justify-center py-10 relative z-10 opacity-50">
+			<svg class="w-10 h-10 text-accent" fill="currentColor" viewBox="0 0 20 20">
+				<path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+			</svg>
+		</div>
+
+		<!-- Sección: El Estudio Digital -->
+		<section class="relative min-h-screen flex items-center py-24 px-6 md:px-12 lg:px-20" id="studio">
+			<div class="max-w-300 mx-auto w-full grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+				<!-- Contenido -->
+				<div class="order-2 lg:order-1 flex flex-col items-start gap-8">
+					<span class="inline-flex items-center gap-2 text-accent font-medium tracking-widest text-xs uppercase">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+							<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+						</svg>
+						Aulas de zensual yoga
+					</span>
+
+					<h2 class="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-dark">
+					Prácticas para el<br/>
+					<span class="bg-clip-text text-transparent bg-linear-to-r from-accent to-cta">
+					Deseo consciente</span>
+					<p class="text-lg text-accent/80 font-light max-w-md leading-relaxed">
+						Relaja y entrena tu cuerpo con meditación en movimiento. Las clases de zensual yoga online están enfocadas en canalizar la energía sexual para el bienestar integral de la persona, equilibrando energías femenina y masculina.
+					</p>
+
+					<div class="flex flex-col gap-3 mt-4">
+						<Button variant="primary" size="lg" href="https://t.me/+cpXA3HTDsiY2ZDFh" class="min-w-60">
+							Unirse a la membresia exclusiva
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</Button>
+						<span class="text-xs text-center text-accent/60 font-medium tracking-wide">
+							Solo 100 Cupos | $33 USD/mes
+						</span>
+					</div>
+				</div>
+
+				<!-- Imagen -->
+				<div class="order-1 lg:order-2 relative group">
+					<div class="absolute inset-0 bg-accent/10 rounded-full blur-2xl transform group-hover:scale-105 transition-transform duration-700"></div>
+					<div class="relative w-full aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-2xl">
+						<div class="absolute inset-0 bg-black/10 z-10"></div>
+						<Image
+							src={studioImage}
+							alt="Grupo de personas practicando yoga al atardecer en la playa"
+							widths={[480, 768, 1100]}
+							sizes="(max-width: 1024px) 100vw, 50vw"
+							format="webp"
+							loading="lazy"
+							decoding="async"
+							class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+						/>
+						<div class="absolute bottom-8 left-8 right-8 z-20 backdrop-blur-md bg-white/30 p-6 rounded-2xl border border-white/20">
+							<a 
+								href="https://wa.me/56958350003?text=Hola,%20me%20gustaría%20información%20sobre%20las%20aulas%20presenciales" 
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex items-center justify-center gap-3 font-serif italic text-dark text-lg hover:text-accent transition-colors duration-300 group/btn"
+							>
+								<svg class="w-5 h-5 opacity-70 group-hover/btn:opacity-100 group-hover/btn:scale-110 transition-all duration-300" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+								</svg>
+								<span>"Vive un aula presencial"</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Separador decorativo -->
+		<div class="flex justify-center py-10 relative z-10 opacity-50">
+			<svg class="w-10 h-10 text-accent" fill="currentColor" viewBox="0 0 20 20">
+				<path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+			</svg>
+		</div>
+
+		<!-- Sección: Membresía Alquimia -->
+		<section class="relative py-24 px-6 md:px-12 lg:px-20 bg-secondary/5" id="sanctuary">
+			<div class="max-w-250 mx-auto w-full flex flex-col gap-20">
+				<div class="text-center space-y-6">
+					<span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white border border-coral-200 text-coral-500 mb-4">
+						<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+						</svg>
+					</span>
+					<h2 class="font-serif text-4xl md:text-5xl text-dark leading-tight">Tu Bienestar Financia la Libertad de Otra Mujer</h2>
+					<p class="text-accent max-w-lg mx-auto font-serif italic text-xl">"Conoce nuestro modelo de consciencia circular"</p>
+					<p class="text-accent/80 max-w-lg mx-auto text-sm">
+						 Creemos en un imperio con alma. En Latinoamérica, miles de mujeres carecen de acceso a una educación sexual clínica y segura, perpetuando ciclos de vulnerabilidad y silencio. Por eso, implementamos el Modelo 1x1 (Consciencia Circular): por cada inscripción a nuestras aulas de Zensual Yoga, cursos premium o retiros, nuestra marca financia directamente una beca completa de educación y salud íntima para mujeres en situaciones de riesgo social. Cuando decides sanar tu relación con tu cuerpo, dejas un eco de transformación en el mundo. Eso es verdadero lujo con proposito
+					</p>
+				</div>
+
+				<!-- Grid de beneficios -->
+				<div class="grid md:grid-cols-3 gap-6">
+					<div class="bg-white rounded-4xl border border-secondary hover:border-accent/30 transition-colors group overflow-hidden">
+						<!-- Imagen con desvanecimiento -->
+					<div class="relative h-48 overflow-hidden">
+						<img 
+							src="/images/94c96f8f-7259-4614-9be0-1b698e53aa4e.jpeg" 
+							alt="Podcast" 
+							loading="lazy"
+							decoding="async"
+							width="800"
+							height="480"
+							class="w-full h-full object-cover object-center"
+						/>
+						<div class="absolute bottom-0 left-0 right-0 h-16 bg-linear-to-b from-transparent to-white/80"></div>
+					</div>
+					<div class="p-8 -mt-8 relative">
+							<div class="bg-accent/5 w-12 h-12 rounded-full flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+								<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+								</svg>
+							</div>
+							<h3 class="font-bold text-lg mb-2 text-dark">¿Cómo puedo  colaborar?</h3>
+						<p class="text-sm text-accent/70 mb-4">Escucha y comparte el Podcast: Cada sábado un nuevo episodio de “Sexualidad Inteligente”</p>
+						<div class="flex gap-2">
+							<a 
+								href="https://open.spotify.com/show/7H2tiWeYjxbkZNltjLAldJ?si=vgVftTDHSOSu8eJYlyL31A" 
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 text-xs bg-accent/10 hover:bg-accent hover:text-white rounded-full transition-colors"
+							>
+								<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+								</svg>
+								Spotify
+							</a>
+							<a 
+								href="https://www.youtube.com/@sexologabi" 
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 text-xs bg-accent/10 hover:bg-accent hover:text-white rounded-full transition-colors"
+							>
+								<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+								</svg>
+								YouTube
+							</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="bg-white rounded-4xl border border-secondary hover:border-accent/30 transition-colors group md:-translate-y-4 shadow-xl shadow-secondary/50 overflow-hidden">
+						<!-- Imagen con desvanecimiento -->
+					<div class="relative h-48 overflow-hidden">
+						<img 
+							src="/images/angelina-sarycheva-vFefVZLzQYU-unsplash.jpg" 
+							alt="Círculo Privado" 
+							loading="lazy"
+							decoding="async"
+							width="800"
+							height="480"
+							class="w-full h-full object-cover object-center"
+						/>
+						<div class="absolute bottom-0 left-0 right-0 h-16 bg-linear-to-b from-transparent to-white/80"></div>
+					</div>
+					<div class="p-8 -mt-8 relative">
+							<div class="bg-accent/5 w-12 h-12 rounded-full flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+								<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+								</svg>
+							</div>
+							<h3 class="font-bold text-lg mb-2 text-dark">Sígueme en redes sociales y únete a la comunidad.</h3>
+							<p class="text-sm text-accent/70 mb-4">El alcance es nuestra prioridad para llegar a esas mujeres que más necesitan de salud y educación experta.</p>
+							<div class="flex flex-col gap-3">
+								<a 
+									href="https://www.instagram.com/gabiramirez.oficial?igsh=aWs5dXVob2hic3A1" 
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs bg-accent/10 hover:bg-accent hover:text-white rounded-full transition-colors font-medium"
+								>
+									Seguir en Instagram
+								</a>
+								<a 
+									href="https://t.me/comunidadsexualidadinteligente" 
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs bg-accent/10 hover:bg-accent hover:text-white rounded-full transition-colors font-medium border border-accent/20"
+								>
+									<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.121.098.155.23.171.324.016.094.037.308.021.475z"/>
+									</svg>
+								Únete a la comunidad gratuita
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="bg-white rounded-4xl border border-secondary hover:border-accent/30 transition-colors group overflow-hidden">
+						<!-- Imagen con desvanecimiento -->
+					<div class="relative h-48 overflow-hidden">
+						<img 
+							src="/images/nathan-dumlao-w5hhoYM_JsU-unsplash.jpg" 
+							alt="Contenido Inédito" 
+							loading="lazy"
+							decoding="async"
+							width="800"
+							height="480"
+							class="w-full h-full object-cover"
+						/>
+						<div class="absolute bottom-0 left-0 right-0 h-16 bg-linear-to-b from-transparent to-white/80"></div>
+					</div>
+					<div class="p-8 -mt-8 relative">
+							<div class="bg-accent/5 w-12 h-12 rounded-full flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+								<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+								</svg>
+							</div>
+							<h3 class="font-bold text-lg mb-2 text-dark">Contenido Inédito</h3>
+							<p class="text-sm text-accent/70 mb-4">Entrenamientos para el deseo consciente. Para mujeres que desean comprender su erotismo con madurez y curiosidad.</p>
+						<a 
+							href="/mas-informacion" 
+							class="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs bg-accent/10 hover:bg-accent hover:text-white rounded-full transition-colors font-medium border border-accent/20"
+						>
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+							</svg>
+							Retiro en Brasil
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Membresía VIP -->
+				<div class="flex flex-col items-center gap-6 mt-12 pt-12 border-t border-secondary/30">
+					<div class="text-center space-y-4">
+						<h3 class="font-serif text-3xl md:text-4xl text-dark">Unirse a la membresía VIP</h3>
+						<p class="text-accent/80 max-w-md mx-auto">Acceso y descuentos exclusivos en todos los contenidos y eventos de la comunidad privada.</p>
+						<div class="flex items-baseline justify-center gap-2">
+							<span class="text-4xl font-bold text-dark">$33</span>
+							<span class="text-lg text-accent/60">USD/mes</span>
+						</div>
+					</div>
+					<Button variant="primary" size="lg" href="https://t.me/+cpXA3HTDsiY2ZDFh " class="min-w-60">
+						Unirme ahora
+					</Button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Separador decorativo -->
+		<div class="flex justify-center py-10 relative z-10 opacity-50">
+			<svg class="w-10 h-10 text-accent" fill="currentColor" viewBox="0 0 20 20">
+				<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+			</svg>
+		</div>
+
+		<!-- Sección: Tu Maestría Íntima -->
+		<section class="relative py-20 px-6 md:px-20 lg:px-40" id="mastery">
+			<div class="max-w-300 mx-auto w-full">
+				<div class="bg-white rounded-[3rem] overflow-hidden border border-secondary shadow-2xl">
+					<div class="flex flex-col lg:flex-row">
+						<!-- Imagen -->
+						<div class="lg:w-1/2 min-h-100 lg:min-h-full relative">
+							<Image
+								src={masteryImage}
+								alt="Gabriela Ramírez"
+								widths={[640, 960, 1400]}
+								sizes="(max-width: 1024px) 100vw, 50vw"
+								format="webp"
+								loading="lazy"
+								decoding="async"
+								class="absolute inset-0 w-full h-full object-cover"
+							/>
+							<div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent flex items-end p-10">
+								<div class="text-white">
+									<p class="font-serif italic text-2xl mb-2">"La verdadera maestría comienza dentro."</p>
+									<div class="h-1 w-12 bg-accent rounded-full"></div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Contenido -->
+						<div class="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
+							<h2 class="font-serif text-4xl mb-6 text-dark">Experiencias Somáticas: Mañanas de Bienestar, Ciencia y Sentidos</h2>
+							<p class="text-accent/80 text-lg leading-relaxed mb-8">
+								Un encuentro exclusivo de medio día diseñado para desconectar la mente, regular el sistema nervioso y redescubrir el placer de habitar tu cuerpo. Imagina un sábado dedicado enteramente a ti. Comenzamos la mañana descompresionando el cuerpo y comprendiendo la neurociencia de tu bienestar, cerramos la experiencia celebrando la vida. Disfrutaremos de una cata exclusiva de vinos locales maridada con la más alta charcutería artesanal tradicional de autor. Un viaje sensorial que va desde la teoría científica hasta el placer de los sentidos.
+							</p>
+
+							<div class="grid grid-cols-2 gap-4 mb-10">
+								<div class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+									</svg>
+									<span class="text-sm font-medium text-dark">Comunicación</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+									</svg>
+									<span class="text-sm font-medium text-dark">Energía</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+									</svg>
+									<span class="text-sm font-medium text-dark">Tantra</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+									</svg>
+									<span class="text-sm font-medium text-dark">Ritual</span>
+								</div>
+							</div>
+
+							<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-secondary pt-8">
+								<div class="flex flex-col">
+									<span class="text-xs text-accent uppercase tracking-wider mb-1">Sede: Casa Blanca</span>
+									<div class="flex items-baseline gap-0.5 md:gap-1">
+										<span class="font-serif text-2xl md:text-3xl text-dark font-semibold">Desde $85 USD</span>
+										<span class="text-xs md:text-sm text-accent/70 font-medium">/mes</span>
+									</div>
+								</div>
+								<Button variant="primary" size="md" href="https://www.paypal.com/ncp/payment/Z7EELY9B6QKQA" class="w-full sm:w-auto">
+									Quiero saber más
+								</Button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Separador decorativo -->
+		<div class="flex justify-center py-10 relative z-10 opacity-50">
+			<svg class="w-10 h-10 text-accent transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+			</svg>
+		</div>
+
+		<!-- Sección: Retiro en Brasil -->
+		<section class="relative py-20 pb-32 px-6 md:px-20 lg:px-40" id="retreat">
+			<div class="max-w-300 mx-auto w-full relative">
+				<div class="absolute -top-10 -right-10 w-32 h-32 border border-accent/20 rounded-full hidden md:block"></div>
+				
+				<div class="relative rounded-[2.5rem] overflow-hidden min-h-37.5 flex items-end">
+					<div class="absolute inset-0 transition-transform duration-[2s] hover:scale-105 flex items-center justify-center">
+						<img 
+							src="https://images.pexels.com/photos/19611076/pexels-photo-19611076.jpeg" 
+							alt="Paisaje brasileño con colinas verdes al amanecer" 
+							loading="lazy"
+							decoding="async"
+							class="w-full h-full object-cover" 
+						/>
+					</div>
+					<div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
+					
+					<div class="relative z-10 w-full p-8 md:p-16 lg:p-20 flex flex-col md:flex-row md:items-end justify-between gap-10">
+						<div class="max-w-xl">
+							<div class="flex items-center gap-2 text-accent mb-4">
+								<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+								</svg>
+								<span class="text-xs font-bold uppercase tracking-widest text-white/90">Retiro en Pipa, Brazil por 5 días</span>
+							</div>
+							<h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+								El cuerpo como <br/>templo
+							</h2>
+							<p class="text-white/80 text-lg md:text-xl font-light font-serif italic mb-2">
+								"Un viaje sensorial y consciente para reconectar con el
+								cuerpo, el placer y la energía vital."
+							</p>
+							<p class="text-white/70 text-base max-w-md">
+								Movimiento, ritual, descanso, silencio y expansión.
+							</p>
+						</div>
+
+						<div class="flex flex-col gap-4 min-w-50">
+							<Button variant="outline" size="lg" href="/formulario-retiro" class="bg-white/10 backdrop-blur-md hover:bg-accent border-white/30 text-white group">
+								Aplicar al Retiro
+								<svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+								</svg>
+							</Button>
+							<Button variant="outline" size="md" href="/mas-informacion" class="bg-transparent border-white/30 text-white/80 hover:text-white hover:border-white/50 transition-colors">
+								Más información
+							</Button>
+							<div class="text-right">
+								<span class="text-xs text-white/50 block mb-1">Cupos limitados</span>
+								<span class="text-white font-medium text-sm">Exclusivo mujeres</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Separador decorativo -->
+		<div class="flex justify-center py-10 relative z-10 opacity-50">
+			<svg class="w-10 h-10 text-accent transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+			</svg>
+		</div>
+
+		<!-- Sección del Equipo -->
+		<TeamSection />
+
+		<!-- Separador decorativo -->
+		<div class="flex justify-center py-10 relative z-10 opacity-50">
+			<svg class="w-10 h-10 text-accent" fill="currentColor" viewBox="0 0 20 20">
+				<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+			</svg>
+		</div>
+
+		<!-- Sección del Blog -->
+		<BlogSection />
+	</div>
+</Layout>

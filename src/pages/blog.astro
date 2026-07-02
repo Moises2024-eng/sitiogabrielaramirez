@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import BlogCard from '../components/ui/BlogCard.astro';
+
+// Obtener todos los artículos del blog, ordenados por fecha
+const allBlogPosts = await getCollection('blog');
+const sortedPosts = allBlogPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Agrupar por categoría
+const categories = ['EDUCACIÓN', 'MINDFULNESS', 'LIFESTYLE', 'PRÓXIMAMENTE'];
+---
+
+<Layout title="Blog - Sexoguía | SexoloGabi">
+  <div class="relative z-10">
+    
+    <!-- Hero del Blog -->
+    <section class="relative py-24 px-6 md:px-12 lg:px-20 bg-linear-to-b from-coral-50/30 to-transparent">
+      <div class="max-w-7xl mx-auto text-center">
+        <span class="inline-block text-xs font-medium tracking-widest uppercase text-coral-500 mb-4">
+          EL BLOG
+        </span>
+        <h1 class="font-italianno text-7xl md:text-8xl lg:text-9xl text-dark mb-6">
+          Sexologuía
+        </h1>
+        <p class="text-lg md:text-xl text-dark/70 max-w-2xl mx-auto font-light">
+          Explorando la sexualidad consciente, el bienestar íntimo y el crecimiento personal.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filtros por categoría  -->
+    <section class="px-6 md:px-12 lg:px-20 -mt-8 relative z-10">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap gap-3 justify-center">
+          <button 
+            data-filter="all" 
+            class="filter-btn px-5 py-2.5 text-sm font-medium tracking-wide uppercase rounded-full transition-all bg-coral-500 text-white border border-coral-500"
+          >
+            Todos
+          </button>
+          {categories.map((cat) => (
+            <button 
+              data-filter={cat} 
+              class="filter-btn px-5 py-2.5 text-sm font-medium tracking-wide uppercase rounded-full transition-all hover:bg-coral-100 hover:text-coral-600 bg-white border border-gray-200 text-dark/70"
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid de todos los artículos -->
+    <section class="py-16 px-6 md:px-12 lg:px-20">
+      <div class="max-w-7xl mx-auto">
+        {sortedPosts.length > 0 ? (
+          <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+            {sortedPosts.map((post) => (
+              <div data-category={post.data.category} class="blog-post-item">
+                <BlogCard
+                  title={post.data.title}
+                  description={post.data.description}
+                  category={post.data.category}
+                  image={post.data.image}
+                  slug={post.slug}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-20">
+            <p class="text-dark/60 text-lg">Aún no hay artículos publicados.</p>
+          </div>
+        )}
+      </div>
+    </section>
+
+  </div>
+
+  <script is:inline>
+    // Funcionalidad de filtrado de blog con mejor manejo de eventos
+    (function() {
+      let isInitialized = false;
+
+      function handleFilterClick(e) {
+        // Buscar el botón clickeado (puede ser el botón o un elemento hijo)
+        const button = e.target.closest('.filter-btn');
+        if (!button) return;
+
+        const filter = button.getAttribute('data-filter');
+        
+        // Actualizar estilos de botones activos
+        const allButtons = document.querySelectorAll('.filter-btn');
+        allButtons.forEach(btn => {
+          if (btn === button) {
+            btn.classList.remove('bg-white', 'border-gray-200', 'text-dark/70');
+            btn.classList.add('bg-coral-500', 'text-white', 'border-coral-500');
+          } else {
+            btn.classList.remove('bg-coral-500', 'text-white', 'border-coral-500');
+            btn.classList.add('bg-white', 'border-gray-200', 'text-dark/70');
+          }
+        });
+
+        // Filtrar posts
+        const blogPosts = document.querySelectorAll('.blog-post-item');
+        blogPosts.forEach(post => {
+          const category = post.getAttribute('data-category');
+          
+          if (filter === 'all' || category === filter) {
+            post.style.display = 'block';
+            // Animación de entrada
+            post.style.animation = 'fadeIn 0.5s ease-in';
+          } else {
+            post.style.display = 'none';
+          }
+        });
+      }
+
+      function initBlogFilters() {
+        // Evitar inicializar múltiples veces
+        if (isInitialized) {
+          return;
+        }
+
+        const filterContainer = document.querySelector('.flex.flex-wrap.gap-3');
+        const blogPosts = document.querySelectorAll('.blog-post-item');
+
+        if (!filterContainer || !blogPosts.length) {
+          console.warn('No se encontraron elementos del blog');
+          return;
+        }
+
+        // Usar event delegation en el contenedor de botones
+        filterContainer.removeEventListener('click', handleFilterClick);
+        filterContainer.addEventListener('click', handleFilterClick);
+
+        isInitialized = true;
+        console.log('Filtros del blog inicializados');
+      }
+
+      // Reinicializar cuando sea necesario
+      function reinitIfNeeded() {
+        isInitialized = false;
+        initBlogFilters();
+      }
+
+      // Ejecutar cuando el DOM esté listo
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBlogFilters);
+      } else {
+        initBlogFilters();
+      }
+
+      // Reinicializar si el usuario vuelve a la página
+      document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+          setTimeout(reinitIfNeeded, 100);
+        }
+      });
+
+      // Soporte para navegación con back/forward
+      window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+          reinitIfNeeded();
+        }
+      });
+    })();
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<Layout title="Inmersión en el Paraíso - Retiro Exclusivo Brasil">
+	
+	<div class="relative">
+		<!-- Hero Section -->
+		<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+			<div class="absolute inset-0">
+				<img 
+					src="/images/marcelo-santos--TmGql-RBAw-unsplash.jpg" 
+					alt="Paisaje brasileño con colinas verdes al amanecer" 
+					class="w-full h-full object-cover"
+				/>
+				<div class="absolute inset-0 bg-black/40"></div>
+			</div>
+			
+			<div class="relative z-10 text-center text-white space-y-8 px-6">
+				<p class="text-xs font-semibold uppercase tracking-widest text-white/90" data-animate="fade-in">
+					Retiro Exclusivo · Brasil
+				</p>
+				<h1 class="text-5xl md:text-7xl font-serif font-normal leading-tight" data-animate="fade-up">
+					Inmersión en el<br/>
+					<span class="font-italianno text-7xl md:text-9xl font-normal italic text-coral-400">Paraíso</span>
+				</h1>
+				<p class="text-lg font-light max-w-2xl mx-auto leading-relaxed" data-animate="fade-up">
+					5 días de yoga al amanecer, rituales y conexión profunda contigo misma.<br/>
+					Solo mujeres.
+				</p>
+				<Button variant="primary" size="lg" href="/formulario-retiro" class="mt-8" data-animate="fade-up">
+					Solicitar Invitación
+				</Button>
+			</div>
+			
+			<!-- Scroll indicator -->
+			<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+				<div class="animate-bounce">
+					<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+					</svg>
+				</div>
+			</div>
+		</section>
+
+		<!-- La Experiencia Section -->
+		<section class="py-24 bg-gray-50">
+			<div class="max-w-6xl mx-auto px-6">
+				<div class="text-center mb-16" data-animate="fade-up">
+					<h2 class="text-4xl md:text-5xl font-serif text-dark mb-6">La Experiencia</h2>
+					<p class="text-lg text-dark/70 font-light max-w-2xl mx-auto">
+						Un viaje transformador para conectar con tu esencia más profunda y la intimidad verdadera.
+					</p>
+				</div>
+				
+				<div class="grid md:grid-cols-3 gap-8" data-animate="stagger">
+					<!-- Yoga & Mindfulness -->
+					<div class="bg-white rounded-4xl overflow-hidden shadow-lg group hover:shadow-xl transition-shadow duration-300">
+						<div class="h-64 relative overflow-hidden">
+							<img 
+								src="https://images.pexels.com/photos/317155/pexels-photo-317155.jpeg" 
+								alt="Yoga en la playa" 
+								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+							/>
+						</div>
+						<div class="p-8">
+							<h3 class="text-xl font-serif text-dark mb-4">Yoga & Mindfulness</h3>
+							<p class="text-dark/70 font-light leading-relaxed">
+								Sesiones al amanecer para despertar tu cuerpo y elevar tu mente, estableciendo una base sólida para la intimidad.
+							</p>
+						</div>
+					</div>
+
+					<!-- Sexualidad Sagrada -->
+					<div class="bg-white rounded-4xl overflow-hidden shadow-lg group hover:shadow-xl transition-shadow duration-300">
+						<div class="h-64 relative overflow-hidden">
+							<img 
+								src="https://images.pexels.com/photos/3692750/pexels-photo-3692750.jpeg" 
+								alt="Manos conectándose" 
+								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+							/>
+						</div>
+						<div class="p-8">
+							<h3 class="text-xl font-serif text-dark mb-4">Sexualidad Sagrada</h3>
+							<p class="text-dark/70 font-light leading-relaxed">
+								Experiencias que profundizan las dimensiones del placer y la conexión emocional.
+							</p>
+						</div>
+					</div>
+
+					<!-- Entornos de Conexión -->
+					<div class="bg-white rounded-4xl overflow-hidden shadow-lg group hover:shadow-xl transition-shadow duration-300">
+						<div class="h-64 relative overflow-hidden">
+							<img 
+								src="images/pexels-beatriz-beltrame-1785203-3390729.jpg" 
+								alt="Naturaleza virgen" 
+								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+							/>
+						</div>
+						<div class="p-8">
+							<h3 class="text-xl font-serif text-dark mb-4">Entornos de Conexión</h3>
+							<p class="text-dark/70 font-light leading-relaxed">
+								Un encuentro íntimo en las costas paradisiacas de Brasil.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Encuentro Íntimo Section -->
+		<section class="py-24 bg-white">
+			<div class="max-w-5xl mx-auto px-6">
+				<div class="grid lg:grid-cols-2 gap-16 items-center">
+					<div class="space-y-8" data-animate="slide-right">
+						<h2 class="text-4xl md:text-5xl font-serif text-dark leading-tight">
+							Un encuentro íntimo en las costas paradisiacas de 
+							<span class="italic text-coral-500">Brasil</span>.
+						</h2>
+						<div class="space-y-6 text-lg text-dark/80 font-light leading-relaxed">
+							<p>
+								Diseñado meticulosamente para mujeres que buscan elevar su conexión íntima a un nivel sagrado.
+							</p>
+							<p>
+								<span class="italic text-coral-500">Este no es un retiro turístico</span>. Es una inmersión 
+								profunda facilitada por expertos en intimidad y bienestar, en un santuario privado 
+								donde el tiempo se detiene.
+							</p>
+						</div>
+						<div class="bg-coral-50 border border-coral-200 rounded-2xl p-6">
+							<div class="flex items-center gap-3 mb-3">
+								<svg class="w-5 h-5 text-coral-500" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+								</svg>
+								<span class="text-sm font-semibold text-coral-700 uppercase tracking-wider">Exclusividad Garantizada</span>
+							</div>
+							<p class="text-coral-700 font-light">Solo mujeres.</p>
+						</div>
+					</div>
+					
+					<div class="relative" data-animate="scale">
+						<div class="aspect-4/5 rounded-4xl overflow-hidden shadow-2xl">
+							<img 
+								src="https://images.pexels.com/photos/19611076/pexels-photo-19611076.jpeg" 
+								alt="Costa brasileña al atardecer" 
+								class="w-full h-full object-cover"
+							/>
+							<div class="absolute inset-0 bg-linear-to-t from-black/30 to-transparent"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Reserva Section -->
+		<section class="py-24 bg-gray-900 text-white relative overflow-hidden">
+			<div class="absolute inset-0 opacity-20">
+				<img 
+					src="/images/marcelo-cidrack-vQ1XqbSdOk4-unsplash.jpg" 
+					alt="Atardecer en Brasil" 
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			
+			<div class="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8" data-animate="fade-up">
+				<div class="w-16 h-16 mx-auto bg-coral-500/20 rounded-full flex items-center justify-center mb-6">
+					<svg class="w-8 h-8 text-coral-400" fill="currentColor" viewBox="0 0 20 20">
+						<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+					</svg>
+				</div>
+				
+				<h2 class="text-4xl md:text-5xl font-serif">
+					Reserva tu lugar bajo el atardecer
+				</h2>
+				
+				<p class="text-xl font-light max-w-2xl mx-auto leading-relaxed text-white/80">
+					Los espacios son limitados. Comienza tu viaje hacia una intimidad transformadora hoy mismo.
+				</p>
+				
+				<div class="pt-8">
+					<Button variant="primary" size="lg" href="/formulario-retiro">
+						Ver disponibilidad
+					</Button>
+				</div>
+				
+				<p class="text-sm text-white/60 font-light">
+					* Los espacios están sujetos a disponibilidad
+				</p>
+			</div>
+		</section>
+	</div>
+</Layout>
+

@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  slug: string;
+}
+
+const { title, description, category, image, slug } = Astro.props;
+
+const categoryColors = {
+  'EDUCACIÓN': 'bg-coral-100 text-coral-600',
+  'MINDFULNESS': 'bg-purple-100 text-purple-600',
+  'LIFESTYLE': 'bg-amber-100 text-amber-600',
+  'PRÓXIMAMENTE': 'bg-gray-100 text-gray-600'
+};
+
+const categoryColor = categoryColors[category as keyof typeof categoryColors] || 'bg-gray-100 text-gray-600';
+---
+
+<article class="group cursor-pointer">
+  <a href={`/blog/${slug}`} class="block">
+    <!-- Imagen -->
+    <div class="relative overflow-hidden rounded-2xl mb-5 aspect-4/3 bg-gray-100">
+      <img 
+        src={image} 
+        alt={title}
+        loading="lazy"
+        decoding="async"
+        width="800"
+        height="600"
+        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="space-y-3">
+      <!-- Categoría -->
+      <span class={`inline-block text-xs font-medium tracking-wider uppercase px-3 py-1.5 rounded-full ${categoryColor}`}>
+        {category}
+      </span>
+
+      <!-- Título -->
+      <h3 class="font-serif text-2xl text-dark leading-tight group-hover:text-coral-600 transition-colors duration-300">
+        {title}
+      </h3>
+
+      <!-- Descripción -->
+      <p class="text-dark/70 leading-relaxed line-clamp-3">
+        {description}
+      </p>
+    </div>
+  </a>
+</article>

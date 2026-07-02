@@ -1,0 +1,68 @@
+---
+// Sección About - La maestría nace de la presencia
+import { Image } from 'astro:assets';
+import Button from '../ui/Button.astro';
+import aboutImage from '../../assets/images/15f6e949-0b69-4676-9ad8-192e5bb89761.jpeg';
+---
+
+<section class="py-24 bg-main">
+  <div class="container mx-auto px-6 max-w-7xl">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Título de sección -->
+      <div class="text-center mb-20" data-animate="fade-up">
+        <h2 class="text-5xl lg:text-6xl font-serif font-normal text-dark mb-6 leading-[1.1]">
+          El verdadero lujo es<br>
+          <span class="text-coral-500 font-italianno text-6xl lg:text-7xl">volver a casa</span>
+        </h2>
+      </div>
+
+      <!-- Grid de contenido -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Imagen -->
+        <div class="relative rounded-4xl overflow-hidden shadow-xl shadow-black/10 aspect-4/5" data-animate="slide-left">
+          <Image
+            src={aboutImage}
+            alt="Gabriela Ramírez - Sexóloga"
+            widths={[400, 700, 1000]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            format="webp"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Contenido de texto -->
+        <div class="space-y-8" data-animate="slide-right">
+          <p class="text-lg text-dark/80 leading-relaxed font-light">
+            Pasas el día liderando, resolviendo y sosteniendo el mundo de otros de la cabeza hacia arriba. ¿El resultado? Un cuerpo anestesiado por el estrés y una intimidad que se siente ausente o transaccional.
+            <span class="font-medium text-coral-600">Tu falta de deseo no es un problema psicológico, es una respuesta biológica de supervivencia. No estás rota; solo estás desconectada.</span>
+          </p>
+
+          <div class="border-l-2 border-coral-400 pl-8 py-3">
+            <h3 class="text-2xl font-serif font-normal text-dark mb-4 leading-snug">
+              Mi misión es guiarte en el viaje del “Mindful íntimo”
+            </h3>
+          </div>
+
+          <p class="text-base text-dark/70 leading-relaxed font-light">
+            Aquí no vendemos soluciones rápidas ni tips de alcoba. Fusionamos la rigurosidad de la enfermería y la sexología clínica con el poder somático de Zensual Yoga para devolverle la fluidez, la seguridad y la vitalidad a tu zona sagrada. Porque ponerte primero no es egoísmo; es salud basal
+          </p>
+
+          <p class="text-base text-dark/80 leading-relaxed">
+            <span class="font-semibold text-dark">El placer es una inteligencia que se entrena con suavidad y verdad.</span>
+          </p>
+
+          <div class="pt-4">
+            <Button variant="primary" size="md" href="https://wa.me/+56958350003">
+              Agenda tu asesoría personalizada
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

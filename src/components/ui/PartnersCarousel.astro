@@ -1,0 +1,101 @@
+---
+export interface Partner {
+	name: string;
+	logo: string;
+}
+
+const partnersBase: Partner[] = [
+	{ name: "Hotel Pipa Atlantico", logo: "/images/partners/apart-pipa.svg" },
+	{ name: "Brany style Beleza consciente", logo: "/images/partners/PHOTO-2026-02-25-11-05-47 (1).jpg" },
+	{ name: "Moira Sexshop", logo: "/images/partners/moira-sexshop.svg" },
+	{ name: "Trajes de baño", logo: "/images/partners/poseidon.svg" },
+];
+
+// Duplicar para loop infinito sin JavaScript
+const partners = [...partnersBase, ...partnersBase];
+---
+
+<div class="relative py-16">
+	<div class="text-center mb-12">
+		<p class="text-xs uppercase tracking-[0.2em] text-coral-400 mb-2 font-semibold">
+			NUESTROS ALIADOS ESTRATÉGICOS
+		</p>
+	</div>
+
+	<!-- Carrusel CSS -->
+	<div class="max-w-4xl mx-auto px-6">
+		<div class="carousel-wrapper">
+			<div class="carousel-track">
+				{partners.map((partner, index) => (
+					<div class="carousel-slide" data-index={index}>
+						<div class="flex justify-center">
+							<div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center p-4 md:p-6 rounded-2xl border border-secondary bg-white hover:border-coral-300 transition-all duration-300 hover:shadow-lg group">
+								<img 
+									src={partner.logo} 
+									alt={partner.name}
+									class="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+									loading="lazy"
+									onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+								/>
+								<!-- Fallback si la imagen no existe -->
+								<div class="text-center hidden">
+									<svg class="w-8 h-8 md:w-10 md:h-10 mx-auto text-accent/30 group-hover:text-coral-400 transition-colors mb-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+									</svg>
+									<p class="text-[9px] md:text-[10px] font-serif italic text-coral-400 leading-tight">{partner.name}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.carousel-wrapper {
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.carousel-track {
+		display: flex;
+		gap: 2rem;
+		animation: scroll-carousel 40s linear infinite;
+	}
+	
+	.carousel-track:hover {
+		animation-play-state: paused;
+	}
+	
+	@keyframes scroll-carousel {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+	
+	.carousel-slide {
+		flex: 0 0 auto;
+		min-width: 140px;
+	}
+	
+	@media (min-width: 768px) {
+		.carousel-track {
+			gap: 3rem;
+		}
+		
+		.carousel-slide {
+			min-width: 160px;
+		}
+	}
+	
+	@media (min-width: 1024px) {
+		.carousel-track {
+			gap: 4rem;
+		}
+	}
+</style>

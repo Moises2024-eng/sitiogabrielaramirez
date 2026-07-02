@@ -1,0 +1,38 @@
+backend:
+  name: github
+  repo: BaironDev22/sitiogabrielaramirez
+  branch: main
+
+# Para desarrollo local (descomentar para usar)
+# local_backend: true
+
+# Configuración de medios
+# IMPORTANTE: Las imágenes se guardan en el repositorio de GitHub
+# Límite GitHub: 100MB por archivo (recomendado mantener bajo 10MB para mejor rendimiento web)
+# Recomendaciones: Tamaño 1920x1080px o 1600x900px, formato JPG (mejor compresión)
+media_folder: "public/images/blog"
+public_folder: "/images/blog"
+
+# Configuración de colecciones
+collections:
+  - name: "blog"
+    label: "Artículos del Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Título", name: "title", widget: "string", required: true }
+      - { label: "Descripción", name: "description", widget: "text", required: true }
+      - { label: "Fecha de Publicación", name: "pubDate", widget: "datetime", required: true }
+      - { 
+          label: "Categoría", 
+          name: "category", 
+          widget: "select", 
+          options: ["EDUCACIÓN", "MINDFULNESS", "LIFESTYLE", "PRÓXIMAMENTE"],
+          required: true
+        }
+      - { label: "Imagen Destacada", name: "image", widget: "image", required: true }
+      - { label: "Autor", name: "author", widget: "string", default: "Gabriela Ramírez" }
+      - { label: "Contenido", name: "body", widget: "markdown", required: true }

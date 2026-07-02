@@ -1,0 +1,130 @@
+---
+// Sección de productos destacados (preview)
+import Button from '../ui/Button.astro';
+import Card from '../ui/Card.astro';
+---
+
+<section class="py-24 bg-secondary/5">
+  <div class="container mx-auto px-6 max-w-7xl">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Título -->
+      <div class="text-center mb-20">
+        <div class="inline-block mb-6">
+          <span class="text-coral-500 font-medium tracking-widest uppercase text-xs border border-coral-300 px-5 py-2.5 rounded-full">
+            Experiencias Transformadoras
+          </span>
+        </div>
+        <h2 class="text-5xl lg:text-6xl font-serif font-normal text-dark mb-6 leading-[1.1]">
+          Espacios de <span class="text-coral-500 font-italianno text-6xl lg:text-7xl">Profundidad</span>
+        </h2>
+        <p class="text-lg text-dark/60 max-w-2xl mx-auto font-light">
+          No es consumo rápido. Es entrenamiento íntimo consciente.
+        </p>
+      </div>
+
+      <!-- Grid de productos -->
+      <div class="grid md:grid-cols-2 gap-10 mb-12">
+        
+        <!-- Producto 1: Membresía Alquimia -->
+        <Card hover padding="lg" class="border border-gray-200 shadow-lg shadow-black/5">
+          <div class="space-y-5">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs font-medium text-coral-600 uppercase tracking-wider bg-coral-50 px-4 py-2 rounded-full">
+                  Mid Ticket
+                </span>
+                <h3 class="text-2xl font-serif font-normal text-dark mt-4">
+                  Membresía Alquimia
+                </h3>
+              </div>
+              <div class="text-right">
+                <p class="text-3xl font-normal text-coral-600">$10</p>
+                <p class="text-sm text-gray-500 font-light">USD/mes</p>
+              </div>
+            </div>
+            
+            <p class="text-dark/80 leading-relaxed">
+              Clases de yoga para parejas, meditaciones y ejercicios de respiración consciente.
+            </p>
+            
+            <div class="space-y-2 pt-2">
+              <div class="flex items-center space-x-2 text-sm text-dark/70">
+                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Canal Telegram VIP</span>
+              </div>
+              <div class="flex items-center space-x-2 text-sm text-dark/70">
+                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Contenido exclusivo semanal</span>
+              </div>
+            </div>
+            
+            <Button variant="primary" size="md" href="https://t.me/your_channel" class="w-full">
+              Acceder al Canal
+            </Button>
+          </div>
+        </Card>
+
+        <!-- Producto 2: Tu Maestría Íntima -->
+        <Card hover padding="lg" class="border border-coral-200 bg-linear-to-br from-main to-secondary/20 shadow-lg shadow-black/5">
+          <div class="space-y-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs font-semibold text-peach-700 uppercase tracking-wider bg-peach-100 px-3 py-1 rounded-full">
+                  Acceso Completo
+                </span>
+                <h3 class="text-2xl font-serif font-bold text-dark mt-3">
+                  Tu Maestría Íntima
+                </h3>
+              </div>
+              <div class="text-right">
+                <p class="text-3xl font-bold text-cta">$49</p>
+                <p class="text-sm text-muted">Pago único</p>
+              </div>
+            </div>
+            
+            <p class="text-dark/80 leading-relaxed">
+              Pack completo de clases al desnudo para elevar tu inteligencia sexual.
+            </p>
+            
+            <div class="space-y-2 pt-2">
+              <div class="flex items-center space-x-2 text-sm text-dark/70">
+                <svg class="w-5 h-5 text-cta" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>4 clases fundamentales</span>
+              </div>
+              <div class="flex items-center space-x-2 text-sm text-dark/70">
+                <svg class="w-5 h-5 text-cta" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>4 sesiones prácticas intensas</span>
+              </div>
+              <div class="flex items-center space-x-2 text-sm text-dark/70">
+                <svg class="w-5 h-5 text-cta" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Acceso ilimitado de por vida</span>
+              </div>
+            </div>
+            
+            <Button variant="primary" size="md" href="/#studio" class="w-full">
+              Acceder a la Maestría
+            </Button>
+          </div>
+        </Card>
+      </div>
+
+      <!-- CTA para ver todos los servicios -->
+      <div class="text-center">
+        <Button variant="outline" size="lg" href="/#studio">
+          Ver Todos los Servicios y Experiencias
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>

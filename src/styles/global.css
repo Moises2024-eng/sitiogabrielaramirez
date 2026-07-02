@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* ============================================ */
+/* CONFIGURACIÓN CORAL SUN - TAILWIND V4      */
+/* ============================================ */
+
+/* Paleta de Colores Coral Sun */
+@theme {
+  /* Colores Base */
+  --color-main: #FFFFFF;
+  --color-secondary: #FFF2F0;
+  --color-accent: #D6664C;
+  --color-cta: #DE6B55;
+  --color-dark: #000000;
+  --color-muted: #D6664C;
+
+  /* Escala Coral */
+  --color-coral-50: #FFF8F6;
+  --color-coral-100: #FFF2F0;
+  --color-coral-200: #FFE4DF;
+  --color-coral-300: #FFD1C7;
+  --color-coral-400: #FFB8A8;
+  --color-coral-500: #DE6B55;
+  --color-coral-600: #D6664C;
+  --color-coral-700: #C04A2F;
+  --color-coral-800: #a03c15;
+  --color-coral-900: #7A2E10;
+
+  /* Escala Sun (Amarillo) */
+  --color-sun-50: #FFFBF0;
+  --color-sun-100: #FFF5D6;
+  --color-sun-200: #FFEAA3;
+  --color-sun-300: #FFDC70;
+  --color-sun-400: #FFCD47;
+  --color-sun-500: #FFB81C;
+  --color-sun-600: #F5A300;
+  --color-sun-700: #E68A00;
+  --color-sun-800: #CC7700;
+  --color-sun-900: #995900;
+
+  /* Escala Peach (Durazno) */
+  --color-peach-50: #FFF6F0;
+  --color-peach-100: #FFEDE0;
+  --color-peach-200: #FFD9C2;
+  --color-peach-300: #FFC4A3;
+  --color-peach-400: #FFAF85;
+  --color-peach-500: #FF9A66;
+  --color-peach-600: #FF8547;
+  --color-peach-700: #FF6F29;
+  --color-peach-800: #F55A0A;
+  --color-peach-900: #D94A00;
+
+  /* Fuentes */
+  --font-family-sans: 'Montserrat', sans-serif;
+  --font-family-serif: 'Libertinus Serif', serif;
+  --font-family-italianno: 'Italianno', cursive;
+  --font-family-titillium: 'Titillium Web', sans-serif;
+}
+
+/* Estilos globales */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-family-sans);
+    color: var(--color-dark);
+    background-color: var(--color-main);
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,96 @@
+---
+import TeamMemberCard from '../ui/TeamMemberCard.astro';
+// import PartnersCarousel from '../ui/PartnersCarousel.astro';
+
+const teamMembers = [
+	{
+		name: "Gabriela Ramírez",
+		role: "FUNDADORA & SEXÓLOGA CLÍNICA",
+		description: "Enfermera, sexóloga clínica, life and health coach y creadora del estilo \"zensual yoga\". Me dedico a transformar la forma en que habitamos nuestra intimidad. Combino la ciencia de la salud con el poder de la inteligencia sexual y el yoga para guiarte hacia un bienestar integral. Mi propósito es brindarte un espacio seguro y sin tabúes donde puedas reconectar con tu energía vital, liderar tu propio placer y vivir con absoluta confianza.",
+		image: "/images/02983dff-08ec-4954-8f78-f11ab504ea0f.jpeg",
+		tags: ["Trauma", "Somática", "Tantra"],
+		badge: "FUNDADORA",
+		featured: true
+	},
+	{
+		name: "Veronica Pini",
+		role: "FISIOTERAPEUTA SOMÁTICA",
+		description: " Mi casa de belleza es un espacio íntimo y exclusivo donde cada encuentro es personalizado. Integro técnica, escucha y presencia para que cada mujer pueda sentirse vista, sostenida y en armonía con su propia esencia. Creo en una belleza consciente, en el cabello como puente y en cada mujer como un universo único que merece ser honrado.",
+		image: "/images/team/PHOTO-2026-02-25-11-05-47.jpg",
+		tags: ["Mindfulness", "Respiración", "Somática"],
+	},
+	{
+		name: "Carolina Ramírez",
+		role: "FISIOTERAPEUTA / KINESIÓLOGA",
+		description: "Facilitadora de tantra y especialista en masaje sensorial para reconexión de parejas. Carolina aporta una mirada profunda sobre el cuerpo, el tacto consciente y el masaje como herramienta terapéutica para restaurar la confianza, la comunicación no verbal y la presencia.",
+		image: "/images/team/WhatsApp%20Image%202026-03-05%20at%2011.30.31%20(1).jpeg",
+		tags: ["Tantra", "Masaje", "Reconexión"],
+	},
+];
+---
+
+<section class="relative py-24 px-6 md:px-12 lg:px-20 bg-linear-to-b from-white to-secondary/10" id="team">
+	<div class="max-w-300 mx-auto w-full">
+		<!-- Header -->
+		<div class="text-center mb-16" data-animate="fade-up">
+			<h2 class="font-serif text-4xl md:text-5xl text-dark mb-4">
+				Equipo & Partners
+			</h2>
+			<p class="text-accent/70 max-w-2xl mx-auto font-serif italic text-lg">
+				Expertos dedicados y aliados estratégicos para tu bienestar.
+			</p>
+		</div>
+
+		<!-- Grid de equipo: 2 columnas - Gabriela a la izquierda, colaboradoras a la derecha -->
+		<div class="grid lg:grid-cols-2 gap-6 mb-16" data-animate="stagger">
+			<!-- Gabriela - Mitad izquierda completa (layout vertical) -->
+			<div class="flex">
+				<TeamMemberCard 
+					name={teamMembers[0].name}
+					role={teamMembers[0].role}
+					description={teamMembers[0].description}
+					image={teamMembers[0].image}
+					tags={teamMembers[0].tags}
+					badge={teamMembers[0].badge}
+					featured={teamMembers[0].featured}
+					layout="vertical"
+				/>
+			</div>
+
+			<!-- Colaboradoras - Mitad derecha: Veronica y Carolina (layout horizontal) -->
+			<div class="grid gap-5">
+				<!-- Veronica -->
+				<TeamMemberCard 
+					name={teamMembers[1].name}
+					role={teamMembers[1].role}
+					description={teamMembers[1].description}
+					image={teamMembers[1].image}
+					tags={teamMembers[1].tags}
+					layout="horizontal"
+				/>
+
+				<!-- Carolina -->
+				<TeamMemberCard 
+					name={teamMembers[2].name}
+					role={teamMembers[2].role}
+					description={teamMembers[2].description}
+					image={teamMembers[2].image}
+					tags={teamMembers[2].tags}
+					imagePosition="center 18%"
+					layout="horizontal"
+				/>
+			</div>
+		</div>
+
+		<!-- Separador decorativo (comentado temporalmente) -->
+		<!-- <div class="flex justify-center py-8 opacity-50">
+			<svg class="w-10 h-10 text-coral-400" fill="currentColor" viewBox="0 0 20 20">
+				<path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+			</svg>
+		</div> -->
+
+		<!-- Carrusel de aliados (comentado temporalmente hasta tener los logos) -->
+		<!-- <PartnersCarousel /> -->
+	</div>
+</section>
+

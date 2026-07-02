@@ -1,0 +1,96 @@
+---
+// Hero Section - Sección principal del home
+import { Image } from 'astro:assets';
+import Button from '../ui/Button.astro';
+import heroImage from '../../assets/images/muhammadh-saamy-NsTVBS1lBbk-unsplash.jpg';
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-secondary/10">
+  <!-- Decoración minimalista -->
+  <div class="absolute top-12 left-1/2 -translate-x-1/2">
+    <svg class="w-6 h-6 text-coral-400" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+    </svg>
+  </div>
+
+  <div class="container mx-auto px-6 py-32 max-w-7xl">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      
+      <!-- Contenido principal -->
+      <div class="space-y-10">
+        <div class="flex items-center space-x-3" data-animate="fade-in" data-animate-once>
+          <div class="h-px w-8 bg-dark"></div>
+          <p class="text-dark font-medium tracking-wider uppercase text-xs italic">
+             La marca N°1 de Bienestar intimo.
+          </p>
+        </div>
+
+        <!-- Título principal -->
+        <h1 class="text-6xl lg:text-8xl font-serif font-normal text-dark leading-[1.1]" data-animate="fade-up" data-animate-once>
+          Habitar<br>
+          <span class="text-coral-500 font-italianno text-7xl lg:text-9xl font-normal italic">El deseo</span>
+        </h1>
+
+        <!-- Descripción -->
+        <p class="text-lg text-dark/70 leading-relaxed max-w-xl font-light" data-animate="fade-up" data-animate-once>
+          Bienvenida a un espacio de alta gama diseñado por una profesional de la salud, donde podrás liberar bloqueos íntimos, regular tu sistema nervioso y reclamar tu derecho al placer genuino.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-5 pt-6" data-animate="fade-up" data-animate-once>
+          <Button variant="primary" size="lg" href="/formulario-retiro">
+            Entrar a las Aulas de Julio - Lista de espera
+          </Button>
+          <Button variant="outline" size="lg" href="/mas-informacion">
+            Explorar Experiencias
+          </Button>
+        </div>
+
+        <!-- CTA de mujeres -->
+        <div class="flex items-center space-x-4 pt-6">
+          <div class="flex">
+            <!-- Mujer con moño recogido y cuerpo estilizado -->
+            <div class="w-12 h-12 rounded-full bg-coral-200 border-2 border-main flex items-center justify-center">
+              <svg class="w-6 h-6 text-coral-700" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="6.5" r="3"/>
+                <ellipse cx="15" cy="3.5" rx="2" ry="1.5"/>
+                <path d="M9.5 10.5 L8 21 H16 L14.5 10.5 Q12 9 9.5 10.5Z"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-sm text-dark/60 font-light">
+            <span class="font-medium text-dark">Espacios íntimos para mujeres</span><br>
+            que eligen habitarse por completo
+          </p>
+        </div>
+      </div>
+
+      <!-- Imagen principal (placeholder por ahora) -->
+      <div class="relative" data-animate="scale" data-animate-once>
+          <div class="relative rounded-4xl overflow-hidden shadow-2xl shadow-black/10 aspect-3/4">
+            <Image
+              src={heroImage}
+              alt="Pareja disfrutando de un atardecer en la playa"
+              widths={[480, 768, 1200]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              format="webp"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              class="w-full h-full object-cover"
+            />
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decoración minimalista inferior -->
+  <div class="absolute bottom-12 left-1/2 -translate-x-1/2">
+    <div class="animate-bounce">
+      <svg class="w-5 h-5 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </div>
+</section>
+
